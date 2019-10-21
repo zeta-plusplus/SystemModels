@@ -11,7 +11,7 @@ model test_reactor_02
     Placement(visible = true, transformation(origin = {-90, 90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Fluid.Sources.Boundary_pT boundary(redeclare package Medium = liquid1, nPorts = 1, p = 101.3 * 1000) annotation(
     Placement(visible = true, transformation(origin = {90, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
-  Modelica.Blocks.Sources.Ramp ramp1(duration = 100, height = 2.2, offset = 0, startTime = 20) annotation(
+  Modelica.Blocks.Sources.Ramp ramp1(duration = 100, height = 0, offset = 0, startTime = 20) annotation(
     Placement(visible = true, transformation(origin = {-90, 50}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
   Modelica.Fluid.Vessels.ClosedVolume volume(redeclare package Medium = liquid1, T_start = boundary1.T, V = 1e-3, nPorts = 3, use_HeatTransfer = true, use_portsData = false) annotation(
     Placement(visible = true, transformation(origin = {-10, -60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -23,7 +23,7 @@ model test_reactor_02
     Placement(visible = true, transformation(origin = {20, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Add add1 annotation(
     Placement(visible = true, transformation(origin = {40, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Blocks.Sources.Ramp Tfuel_ref(duration = 300, height = -11, offset = -890, startTime = 100)  annotation(
+  Modelica.Blocks.Sources.Ramp Tfuel_ref(duration = 300, height = 0, offset = -890, startTime = 100)  annotation(
     Placement(visible = true, transformation(origin = {70, -20}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
   Modelica.Blocks.Math.Gain Tfuel_rho_feedback(k = -9.5)  annotation(
     Placement(visible = true, transformation(origin = {20, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
@@ -33,7 +33,7 @@ model test_reactor_02
     Placement(visible = true, transformation(origin = {-50, 50}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
   Nuclear.PointKineticMoltenSaltReactor_P1 pointKineticMoltenSaltReactor_P11(NominalPower = 10 / 1000, alpha0 = 1e-6) annotation(
     Placement(visible = true, transformation(origin = {-40, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Pulse pulse1(amplitude = 40, nperiod = 2, offset = 0, period = 100, startTime = 700, width = 50)  annotation(
+  Modelica.Blocks.Sources.Pulse pulse1(amplitude = 0, nperiod = 2, offset = 0, period = 100, startTime = 700, width = 50)  annotation(
     Placement(visible = true, transformation(origin = {-90, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   connect(pulse1.y, pointKineticMoltenSaltReactor_P11.rho_control) annotation(
