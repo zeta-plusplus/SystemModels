@@ -31,9 +31,9 @@ model test_reactor_05
     Placement(visible = true, transformation(origin = {-50, 50}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
   Nuclear.PointKineticMoltenSaltReactor_P1 pointKineticMoltenSaltReactor_P11(NominalPower = 10 / 1000, alpha0 = 1e-6) annotation(
     Placement(visible = true, transformation(origin = {-40, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Pulse pulse1(amplitude = 0, nperiod = 2, offset = 0, period = 100, startTime = 100, width = 50)  annotation(
+  Modelica.Blocks.Sources.Pulse pulse1(amplitude = 500, nperiod = 1, offset = 0, period = 200, startTime = 500, width = 50)  annotation(
     Placement(visible = true, transformation(origin = {-90, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Ramp ramp_dmFuel(duration = 10, height = -25, offset = 50, startTime = 200) annotation(
+  Modelica.Blocks.Sources.Ramp ramp_dmFuel(duration = 10, height = -40, offset = 50, startTime = 200) annotation(
     Placement(visible = true, transformation(origin = {-80, -140}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX basicHX1
   (redeclare package Medium_1 = liquid2, redeclare package Medium_2 = liquid1, Twall_start = Modelica.SIunits.Conversions.from_degC(625), area_h_1 = 0.628 * 11.0003, area_h_2 = 0.628 * 11.0003,
