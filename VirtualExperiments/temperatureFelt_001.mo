@@ -1,4 +1,4 @@
-within SystemModels.Practice;
+within SystemModels.VirtualExperiments;
 
 model temperatureFelt_001
   extends Modelica.Icons.Example;
@@ -82,7 +82,7 @@ equation
   connect(ramp1.y, convection1.Gc) annotation(
     Line(points = {{1, -70}, {12, -70}, {12, -50}, {20, -50}}, color = {0, 0, 127}));
   annotation(
-    Diagram(coordinateSystem(extent = {{-140, -160}, {140, 100}})),
+    Diagram(coordinateSystem(extent = {{-140, -160}, {160, 100}}), graphics = {Text(origin = {94, -44}, extent = {{52, -4}, {-6, 4}}, textString = "skin surface <-> air"), Text(origin = {94, -84}, extent = {{62, -8}, {-6, 4}}, textString = "skin (subcutaneous fat)"), Text(origin = {54, -128}, extent = {{72, -10}, {-6, 4}}, textString = "constant T (isothermal animal)"), Text(origin = {20, 38}, extent = {{24, -4}, {-6, 4}}, textString = "dry air"), Text(origin = {50, -2}, extent = {{24, -4}, {-6, 4}}, textString = "humid air")}),
     __OpenModelica_commandLineOptions = "",
     experiment(StartTime = 0, StopTime = 100, Tolerance = 1e-06, Interval = 0.2),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"));
