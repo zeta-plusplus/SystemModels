@@ -10,29 +10,29 @@ model temperatureFelt_001
   //----
   inner Modelica.Fluid.System system annotation(
     Placement(visible = true, transformation(origin = {-10, 90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Fluid.Sources.MassFlowSource_T boundary(redeclare package Medium = dryair1, T = 5 + 273.15, m_flow = 0.01, nPorts = 1)  annotation(
+  Modelica.Fluid.Sources.MassFlowSource_T boundary(redeclare package Medium = dryair1, T = 5 + 273.15, m_flow = 0.01, nPorts = 1) annotation(
     Placement(visible = true, transformation(origin = {-60, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Fluid.Vessels.ClosedVolume volume(redeclare package Medium = dryair1, T_start = 34 + 273.15,V = 0.01, nPorts = 2, use_HeatTransfer = true, use_portsData = false)  annotation(
+  Modelica.Fluid.Vessels.ClosedVolume volume(redeclare package Medium = dryair1, T_start = 34 + 273.15, V = 0.01, nPorts = 2, use_HeatTransfer = true, use_portsData = false) annotation(
     Placement(visible = true, transformation(origin = {20, 20}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
-  Modelica.Fluid.Sources.Boundary_pT boundary1(redeclare package Medium = dryair1, T = 5 + 273.15, nPorts = 1, p = 101.3 * 1000)  annotation(
+  Modelica.Fluid.Sources.Boundary_pT boundary1(redeclare package Medium = dryair1, T = 5 + 273.15, nPorts = 1, p = 101.3 * 1000) annotation(
     Placement(visible = true, transformation(origin = {110, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
   Modelica.Thermal.HeatTransfer.Components.Convection convection1 annotation(
     Placement(visible = true, transformation(origin = {30, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Thermal.HeatTransfer.Components.ThermalConductor thermalConductor1(G = 100)  annotation(
+  Modelica.Thermal.HeatTransfer.Components.ThermalConductor thermalConductor1(G = 100) annotation(
     Placement(visible = true, transformation(origin = {30, -90}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Thermal.HeatTransfer.Sources.FixedTemperature fixedTemperature1(T = 310.15)  annotation(
+  Modelica.Thermal.HeatTransfer.Sources.FixedTemperature fixedTemperature1(T = 310.15) annotation(
     Placement(visible = true, transformation(origin = {30, -130}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Blocks.Sources.Ramp ramp1(duration = 10, height = 0, offset = 1000 * 0.1, startTime = 10)  annotation(
+  Modelica.Blocks.Sources.Ramp ramp1(duration = 10, height = 0, offset = 1000 * 0.1, startTime = 10) annotation(
     Placement(visible = true, transformation(origin = {-10, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Fluid.Vessels.ClosedVolume volume1(redeclare package Medium = moisitair1, T_start = 34 + 273.15, V = 0.01, X_start = {0.995, 0.005}, nPorts = 2, use_HeatTransfer = true, use_portsData = false) annotation(
+  Modelica.Fluid.Vessels.ClosedVolume volume1(redeclare package Medium = moisitair1, T_start = 34 + 273.15, V = 0.01, X_start = { 0.005,0.995}, nPorts = 2, use_HeatTransfer = true, use_portsData = false) annotation(
     Placement(visible = true, transformation(origin = {60, -20}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
   Modelica.Thermal.HeatTransfer.Components.Convection convection2 annotation(
     Placement(visible = true, transformation(origin = {70, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Thermal.HeatTransfer.Components.ThermalConductor thermalConductor2(G = 100)  annotation(
+  Modelica.Thermal.HeatTransfer.Components.ThermalConductor thermalConductor2(G = 100) annotation(
     Placement(visible = true, transformation(origin = {70, -90}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Fluid.Sources.MassFlowSource_T boundary2(redeclare package Medium = moisitair1, T = 5 + 273.15, X = {0.995, 0.005}, m_flow = 0.01, nPorts = 1) annotation(
+  Modelica.Fluid.Sources.MassFlowSource_T boundary2(redeclare package Medium = moisitair1, T = 5 + 273.15, X = {0.01, 0.99}, m_flow = 0.01, nPorts = 1) annotation(
     Placement(visible = true, transformation(origin = {-60, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Fluid.Sources.Boundary_pT boundary3(redeclare package Medium = moisitair1,T = 5 + 273.15, X = {0.995, 0.005}, nPorts = 2, p = 101.3 * 1000) annotation(
+  Modelica.Fluid.Sources.Boundary_pT boundary3(redeclare package Medium = moisitair1, T = 5 + 273.15, X = { 0.005,0.995}, nPorts = 2, p = 101.3 * 1000) annotation(
     Placement(visible = true, transformation(origin = {110, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
   FluidSystemComponents.Sensor.SpecificHeatCapacity specificHeatCapacity(redeclare package Medium = dryair1) annotation(
     Placement(visible = true, transformation(origin = {-10, 40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -67,9 +67,9 @@ equation
     Line(points = {{30, -40}, {30, 20}}, color = {191, 0, 0}));
   connect(ramp1.y, convection1.Gc) annotation(
     Line(points = {{1, -70}, {12, -70}, {12, -50}, {20, -50}}, color = {0, 0, 127}));
-
-annotation(
+  annotation(
     Diagram(coordinateSystem(extent = {{-100, -160}, {140, 100}})),
     __OpenModelica_commandLineOptions = "",
-  experiment(StartTime = 0, StopTime = 100, Tolerance = 1e-6, Interval = 0.2),
-  __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"));end temperatureFelt_001;
+    experiment(StartTime = 0, StopTime = 100, Tolerance = 1e-06, Interval = 0.2),
+    __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"));
+end temperatureFelt_001;
