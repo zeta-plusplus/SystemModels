@@ -21,11 +21,11 @@ model boiler001
     Placement(visible = true, transformation(origin = {50, 20}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
   Modelica.Fluid.Fittings.SimpleGenericOrifice orifice1(redeclare package Medium = fluid1, diameter = 0.05, zeta = 0.1) annotation(
     Placement(visible = true, transformation(origin = {20, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Ramp ramp1(duration = 5, height = -0.5 * 101.3 * 1000, offset = 2 * 101.3 * 1000, startTime = 5)  annotation(
-    Placement(visible = true, transformation(origin = {-90, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Sources.Ramp ramp1(duration = 5, height = -1.0 * 101.3 * 1000, offset = 2 * 101.3 * 1000, startTime = 5)  annotation(
+    Placement(visible = true, transformation(origin = {-90, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   connect(ramp1.y, boundary1.p_in) annotation(
-    Line(points = {{-78, 30}, {-76, 30}, {-76, 38}, {-62, 38}, {-62, 38}}, color = {0, 0, 127}));
+    Line(points = {{-79, 50}, {-70.5, 50}, {-70.5, 38}, {-62, 38}}, color = {0, 0, 127}));
   connect(boundary1.ports[1], volume.ports[1]) annotation(
     Line(points = {{-40, 30}, {-14, 30}, {-14, 30}, {-10, 30}}, color = {0, 127, 255}, thickness = 0.5));
   connect(fixedHeatFlow1.port, volume.heatPort) annotation(
@@ -40,5 +40,7 @@ equation
     Line(points = {{50, 30}, {70, 30}, {70, 30}, {70, 30}}, color = {0, 127, 255}));
   annotation(
     experiment(StartTime = 0, StopTime = 20, Tolerance = 1e-06, Interval = 0.04),
-    __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"));
+    __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"),
+  Diagram(coordinateSystem(extent = {{-100, -60}, {120, 100}})),
+  __OpenModelica_commandLineOptions = "");
 end boiler001;
