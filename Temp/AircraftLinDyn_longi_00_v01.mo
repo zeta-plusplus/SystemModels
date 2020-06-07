@@ -1,4 +1,4 @@
-within SystemModels.VirtualExperiments;
+within SystemModels.Temp;
 
 model AircraftLinDyn_longi_00_v01
   extends Modelica.Icons.Example;

@@ -1,0 +1,5 @@
+within SystemModels.Practice;
+
+package Temp
+  extends Modelica.Icons.ExamplesPackage;
+end Temp;
