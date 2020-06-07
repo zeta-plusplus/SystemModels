@@ -60,7 +60,8 @@ equation
     Line(points = {{0, 30}, {0, 30}, {0, 20}, {0, 20}}, color = {0, 0, 255}));
   annotation(
     Icon(coordinateSystem(initialScale = 0.05)),
-    Diagram(coordinateSystem(initialScale = 0.05)),
+    Diagram(coordinateSystem(initialScale = 0.05, extent = {{-100, -100}, {160, 100}})),
     experiment(StartTime = 0, StopTime = 200, Tolerance = 1e-06, Interval = 0.01),
-    __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"));
+    __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"),
+  __OpenModelica_commandLineOptions = "");
 end DCmotor002;
