@@ -84,13 +84,47 @@ model AircraftLinDyn_longi_00_v03
   SystemModels.Temp.AircraftLinDyn_longi_00_v03.subcomponents.ctrl_PID ctrl_PID annotation(
     Placement(visible = true, transformation(origin = {-30, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Trapezoid trapezoid_refPitchRate(amplitude = 2, falling = 1, nperiod = 1, offset = 0, period = 10, rising = 1, startTime = 10, width = 5)  annotation(
-    Placement(visible = true, transformation(origin = {-70, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-70, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Ramp ramp_refPitchRate(duration = 1, height = 1, offset = 0, startTime = 10) annotation(
     Placement(visible = true, transformation(origin = {-70, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   SystemModels.Temp.AircraftLinDyn_longi_00_v03.subcomponents.ctrl_PID ctrl_PID1 annotation(
-    Placement(visible = true, transformation(origin = {-30, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-30, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   SystemModels.Temp.AircraftLinDyn_longi_00_v03.subcomponents.aircraft_longi aircraft_longi2 annotation(
-    Placement(visible = true, transformation(origin = {10, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {10, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  SystemModels.Temp.AircraftLinDyn_longi_00_v03.subcomponents.ctrl_PID ctrl_PID2 annotation(
+    Placement(visible = true, transformation(origin = {50, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  SystemModels.Temp.AircraftLinDyn_longi_00_v03.subcomponents.aircraft_longi aircraft_longi3 annotation(
+    Placement(visible = true, transformation(origin = {90, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Sources.Ramp ramp_pitchIntend(duration = 1, height = 10, offset = 0, startTime = 10) annotation(
+    Placement(visible = true, transformation(origin = {-150, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Gain proportional(k = 1) annotation(
+    Placement(visible = true, transformation(origin = {-70, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Sum sum11(nin = 3) annotation(
+    Placement(visible = true, transformation(origin = {-30, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Feedback feedback1 annotation(
+    Placement(visible = true, transformation(origin = {-110, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Continuous.Integrator integrator(k = 1) annotation(
+    Placement(visible = true, transformation(origin = {-70, -100}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Continuous.Derivative derivative1(T = 0.001, k = 0.2) annotation(
+    Placement(visible = true, transformation(origin = {-70, -130}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  SystemModels.Temp.AircraftLinDyn_longi_00_v03.subcomponents.ctrl_PID ctrl_PID3 annotation(
+    Placement(visible = true, transformation(origin = {70, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  SystemModels.Temp.AircraftLinDyn_longi_00_v03.subcomponents.aircraft_longi aircraft_longi4 annotation(
+    Placement(visible = true, transformation(origin = {110, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Sum sum1(nin = 3) annotation(
+    Placement(visible = true, transformation(origin = {-30, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Gain gain(k = 1) annotation(
+    Placement(visible = true, transformation(origin = {-70, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Continuous.Integrator integrator1(k = 1) annotation(
+    Placement(visible = true, transformation(origin = {-70, -220}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Continuous.Derivative derivative(T = 0.001, k = 0.2) annotation(
+    Placement(visible = true, transformation(origin = {-70, -250}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Feedback feedback annotation(
+    Placement(visible = true, transformation(origin = {-110, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Feedback feedback2 annotation(
+    Placement(visible = true, transformation(origin = {0, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Continuous.Derivative qdot_response(T = 0.0001, k = 1.5)  annotation(
+    Placement(visible = true, transformation(origin = {30, -250}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
 equation
   connect(ramp_elev1.y, aircraft_longi1.u_elev) annotation(
     Line(points = {{-38, 70}, {-22, 70}, {-22, 70}, {-20, 70}}, color = {0, 0, 127}));
@@ -101,14 +135,64 @@ equation
   connect(ramp_refPitchRate.y, ctrl_PID.u_ref) annotation(
     Line(points = {{-59, 30}, {-41, 30}}, color = {0, 0, 127}));
   connect(trapezoid_refPitchRate.y, ctrl_PID1.u_ref) annotation(
-    Line(points = {{-58, -30}, {-42, -30}, {-42, -30}, {-40, -30}}, color = {0, 0, 127}));
+    Line(points = {{-59, -10}, {-41, -10}}, color = {0, 0, 127}));
   connect(ctrl_PID1.y, aircraft_longi2.u_elev) annotation(
-    Line(points = {{-18, -30}, {-2, -30}, {-2, -30}, {0, -30}}, color = {0, 0, 127}));
+    Line(points = {{-19, -10}, {-1, -10}}, color = {0, 0, 127}));
   connect(aircraft_longi2.y_q, ctrl_PID1.u_feedback) annotation(
-    Line(points = {{22, -34}, {28, -34}, {28, -52}, {-38, -52}, {-38, -40}, {-38, -40}}, color = {0, 0, 127}));
+    Line(points = {{21, -14}, {28, -14}, {28, -32}, {-38, -32}, {-38, -21}}, color = {0, 0, 127}));
+  connect(ctrl_PID2.y, aircraft_longi3.u_elev) annotation(
+    Line(points = {{61, -70}, {79, -70}}, color = {0, 0, 127}));
+  connect(aircraft_longi3.y_q, ctrl_PID2.u_feedback) annotation(
+    Line(points = {{101, -74}, {106, -74}, {106, -90}, {42, -90}, {42, -81}}, color = {0, 0, 127}));
+  connect(proportional.y, sum11.u[1]) annotation(
+    Line(points = {{-59, -70}, {-42, -70}}, color = {0, 0, 127}));
+  connect(integrator.y, sum11.u[2]) annotation(
+    Line(points = {{-59, -100}, {-52, -100}, {-52, -70}, {-42, -70}}, color = {0, 0, 127}));
+  connect(ramp_pitchIntend.y, feedback1.u1) annotation(
+    Line(points = {{-139, -70}, {-118, -70}}, color = {0, 0, 127}));
+  connect(aircraft_longi3.y_theta, feedback1.u2) annotation(
+    Line(points = {{101, -66}, {112, -66}, {112, -150}, {-110, -150}, {-110, -78}}, color = {0, 0, 127}));
+  connect(feedback1.y, proportional.u) annotation(
+    Line(points = {{-101, -70}, {-82, -70}}, color = {0, 0, 127}));
+  connect(feedback1.y, integrator.u) annotation(
+    Line(points = {{-101, -70}, {-90, -70}, {-90, -100}, {-82, -100}}, color = {0, 0, 127}));
+  connect(derivative1.y, sum11.u[3]) annotation(
+    Line(points = {{-59, -130}, {-50, -130}, {-50, -70}, {-42, -70}}, color = {0, 0, 127}));
+  connect(feedback1.y, derivative1.u) annotation(
+    Line(points = {{-101, -70}, {-92, -70}, {-92, -130}, {-82, -130}}, color = {0, 0, 127}));
+  connect(sum11.y, ctrl_PID2.u_ref) annotation(
+    Line(points = {{-19, -70}, {39, -70}}, color = {0, 0, 127}));
+  connect(ramp_pitchIntend.y, feedback.u1) annotation(
+    Line(points = {{-139, -70}, {-128, -70}, {-128, -190}, {-118, -190}}, color = {0, 0, 127}));
+  connect(feedback.y, gain.u) annotation(
+    Line(points = {{-101, -190}, {-82, -190}}, color = {0, 0, 127}));
+  connect(ctrl_PID3.y, aircraft_longi4.u_elev) annotation(
+    Line(points = {{81, -190}, {99, -190}}, color = {0, 0, 127}));
+  connect(aircraft_longi4.y_q, ctrl_PID3.u_feedback) annotation(
+    Line(points = {{121, -194}, {124, -194}, {124, -214}, {62, -214}, {62, -201}}, color = {0, 0, 127}));
+  connect(gain.y, sum1.u[1]) annotation(
+    Line(points = {{-59, -190}, {-42, -190}}, color = {0, 0, 127}));
+  connect(integrator1.y, sum1.u[2]) annotation(
+    Line(points = {{-59, -220}, {-50, -220}, {-50, -190}, {-42, -190}}, color = {0, 0, 127}));
+  connect(derivative.y, sum1.u[3]) annotation(
+    Line(points = {{-59, -250}, {-46, -250}, {-46, -190}, {-42, -190}}, color = {0, 0, 127}));
+  connect(feedback.y, integrator1.u) annotation(
+    Line(points = {{-101, -190}, {-88, -190}, {-88, -220}, {-82, -220}}, color = {0, 0, 127}));
+  connect(feedback.y, derivative.u) annotation(
+    Line(points = {{-101, -190}, {-94, -190}, {-94, -250}, {-82, -250}}, color = {0, 0, 127}));
+  connect(aircraft_longi4.y_theta, feedback.u2) annotation(
+    Line(points = {{122, -186}, {148, -186}, {148, -274}, {-110, -274}, {-110, -198}}, color = {0, 0, 127}));
+  connect(sum1.y, feedback2.u1) annotation(
+    Line(points = {{-18, -190}, {-8, -190}, {-8, -190}, {-8, -190}}, color = {0, 0, 127}));
+  connect(aircraft_longi4.y_q, qdot_response.u) annotation(
+    Line(points = {{122, -194}, {132, -194}, {132, -250}, {42, -250}}, color = {0, 0, 127}));
+  connect(qdot_response.y, feedback2.u2) annotation(
+    Line(points = {{18, -250}, {0, -250}, {0, -198}, {0, -198}}, color = {0, 0, 127}));
+  connect(feedback2.y, ctrl_PID3.u_ref) annotation(
+    Line(points = {{10, -190}, {58, -190}, {58, -190}, {60, -190}}, color = {0, 0, 127}));
 protected
   annotation(
-    Diagram(coordinateSystem(extent = {{-240, -120}, {240, 100}})),
+    Diagram(coordinateSystem(extent = {{-180, -280}, {160, 100}})),
     Icon,
     experiment(StartTime = 0, StopTime = 50, Tolerance = 1e-06, Interval = 0.1),
     __OpenModelica_commandLineOptions = "--matchingAlgorithm=PFPlusExt --indexReductionMethod=dynamicStateSelection -d=initialization,NLSanalyticJacobian,newInst",
