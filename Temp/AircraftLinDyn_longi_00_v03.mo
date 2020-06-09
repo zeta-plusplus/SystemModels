@@ -108,23 +108,23 @@ model AircraftLinDyn_longi_00_v03
   Modelica.Blocks.Continuous.Derivative derivative1(T = 0.001, k = 0.2) annotation(
     Placement(visible = true, transformation(origin = {-70, -130}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   SystemModels.Temp.AircraftLinDyn_longi_00_v03.subcomponents.ctrl_PID ctrl_PID3 annotation(
-    Placement(visible = true, transformation(origin = {70, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {70, -210}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   SystemModels.Temp.AircraftLinDyn_longi_00_v03.subcomponents.aircraft_longi aircraft_longi4 annotation(
-    Placement(visible = true, transformation(origin = {110, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {110, -210}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Sum sum1(nin = 3) annotation(
-    Placement(visible = true, transformation(origin = {-30, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-30, -210}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain gain(k = 1) annotation(
-    Placement(visible = true, transformation(origin = {-70, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-70, -210}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.Integrator integrator1(k = 1) annotation(
-    Placement(visible = true, transformation(origin = {-70, -220}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-70, -240}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.Derivative derivative(T = 0.001, k = 0.2) annotation(
-    Placement(visible = true, transformation(origin = {-70, -250}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-70, -270}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback feedback annotation(
-    Placement(visible = true, transformation(origin = {-110, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-110, -210}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback feedback2 annotation(
-    Placement(visible = true, transformation(origin = {0, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {0, -210}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.Derivative qdot_response(T = 0.0001, k = 1.5)  annotation(
-    Placement(visible = true, transformation(origin = {30, -250}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {30, -270}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
 equation
   connect(ramp_elev1.y, aircraft_longi1.u_elev) annotation(
     Line(points = {{-38, 70}, {-22, 70}, {-22, 70}, {-20, 70}}, color = {0, 0, 127}));
@@ -163,36 +163,36 @@ equation
   connect(sum11.y, ctrl_PID2.u_ref) annotation(
     Line(points = {{-19, -70}, {39, -70}}, color = {0, 0, 127}));
   connect(ramp_pitchIntend.y, feedback.u1) annotation(
-    Line(points = {{-139, -70}, {-128, -70}, {-128, -190}, {-118, -190}}, color = {0, 0, 127}));
+    Line(points = {{-139, -70}, {-134, -70}, {-134, -210}, {-118, -210}}, color = {0, 0, 127}));
   connect(feedback.y, gain.u) annotation(
-    Line(points = {{-101, -190}, {-82, -190}}, color = {0, 0, 127}));
+    Line(points = {{-101, -210}, {-82, -210}}, color = {0, 0, 127}));
   connect(ctrl_PID3.y, aircraft_longi4.u_elev) annotation(
-    Line(points = {{81, -190}, {99, -190}}, color = {0, 0, 127}));
+    Line(points = {{81, -210}, {99, -210}}, color = {0, 0, 127}));
   connect(aircraft_longi4.y_q, ctrl_PID3.u_feedback) annotation(
-    Line(points = {{121, -194}, {124, -194}, {124, -214}, {62, -214}, {62, -201}}, color = {0, 0, 127}));
+    Line(points = {{121, -214}, {124, -214}, {124, -234}, {62, -234}, {62, -221}}, color = {0, 0, 127}));
   connect(gain.y, sum1.u[1]) annotation(
-    Line(points = {{-59, -190}, {-42, -190}}, color = {0, 0, 127}));
+    Line(points = {{-59, -210}, {-42, -210}}, color = {0, 0, 127}));
   connect(integrator1.y, sum1.u[2]) annotation(
-    Line(points = {{-59, -220}, {-50, -220}, {-50, -190}, {-42, -190}}, color = {0, 0, 127}));
+    Line(points = {{-59, -240}, {-50, -240}, {-50, -210}, {-42, -210}}, color = {0, 0, 127}));
   connect(derivative.y, sum1.u[3]) annotation(
-    Line(points = {{-59, -250}, {-46, -250}, {-46, -190}, {-42, -190}}, color = {0, 0, 127}));
+    Line(points = {{-59, -270}, {-46, -270}, {-46, -210}, {-42, -210}}, color = {0, 0, 127}));
   connect(feedback.y, integrator1.u) annotation(
-    Line(points = {{-101, -190}, {-88, -190}, {-88, -220}, {-82, -220}}, color = {0, 0, 127}));
+    Line(points = {{-101, -210}, {-88, -210}, {-88, -240}, {-82, -240}}, color = {0, 0, 127}));
   connect(feedback.y, derivative.u) annotation(
-    Line(points = {{-101, -190}, {-94, -190}, {-94, -250}, {-82, -250}}, color = {0, 0, 127}));
+    Line(points = {{-101, -210}, {-94, -210}, {-94, -270}, {-82, -270}}, color = {0, 0, 127}));
   connect(aircraft_longi4.y_theta, feedback.u2) annotation(
-    Line(points = {{122, -186}, {148, -186}, {148, -274}, {-110, -274}, {-110, -198}}, color = {0, 0, 127}));
+    Line(points = {{121, -206}, {148, -206}, {148, -290}, {-110, -290}, {-110, -218}}, color = {0, 0, 127}));
   connect(sum1.y, feedback2.u1) annotation(
-    Line(points = {{-18, -190}, {-8, -190}, {-8, -190}, {-8, -190}}, color = {0, 0, 127}));
+    Line(points = {{-19, -210}, {-8, -210}}, color = {0, 0, 127}));
   connect(aircraft_longi4.y_q, qdot_response.u) annotation(
-    Line(points = {{122, -194}, {132, -194}, {132, -250}, {42, -250}}, color = {0, 0, 127}));
+    Line(points = {{121, -214}, {132, -214}, {132, -270}, {42, -270}}, color = {0, 0, 127}));
   connect(qdot_response.y, feedback2.u2) annotation(
-    Line(points = {{18, -250}, {0, -250}, {0, -198}, {0, -198}}, color = {0, 0, 127}));
+    Line(points = {{19, -270}, {0, -270}, {0, -218}}, color = {0, 0, 127}));
   connect(feedback2.y, ctrl_PID3.u_ref) annotation(
-    Line(points = {{10, -190}, {58, -190}, {58, -190}, {60, -190}}, color = {0, 0, 127}));
+    Line(points = {{9, -210}, {59, -210}}, color = {0, 0, 127}));
 protected
   annotation(
-    Diagram(coordinateSystem(extent = {{-180, -280}, {160, 100}})),
+    Diagram(coordinateSystem(extent = {{-180, -300}, {160, 100}}), graphics = {Rectangle(origin = {-50, -100}, pattern = LinePattern.Dash, extent = {{-76, 58}, {76, -58}}), Text(origin = {-79, -47}, extent = {{-43, 3}, {43, -3}}, textString = "aviator response&behavior"), Text(origin = {-77, -185}, extent = {{-43, 3}, {43, -3}}, textString = "aviator response&behavior"), Rectangle(origin = {-48, -238}, pattern = LinePattern.Dash, extent = {{-76, 58}, {102, -58}})}),
     Icon,
     experiment(StartTime = 0, StopTime = 50, Tolerance = 1e-06, Interval = 0.1),
     __OpenModelica_commandLineOptions = "--matchingAlgorithm=PFPlusExt --indexReductionMethod=dynamicStateSelection -d=initialization,NLSanalyticJacobian,newInst",
