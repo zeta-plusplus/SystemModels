@@ -195,6 +195,6 @@ protected
     Diagram(coordinateSystem(extent = {{-180, -300}, {160, 100}}), graphics = {Rectangle(origin = {-50, -100}, pattern = LinePattern.Dash, extent = {{-76, 58}, {76, -58}}), Text(origin = {-79, -47}, extent = {{-43, 3}, {43, -3}}, textString = "aviator response&behavior"), Text(origin = {-77, -185}, extent = {{-43, 3}, {43, -3}}, textString = "aviator response&behavior"), Rectangle(origin = {-48, -238}, pattern = LinePattern.Dash, extent = {{-76, 58}, {102, -58}})}),
     Icon,
     experiment(StartTime = 0, StopTime = 50, Tolerance = 1e-06, Interval = 0.1),
-    __OpenModelica_commandLineOptions = "--matchingAlgorithm=PFPlusExt --indexReductionMethod=dynamicStateSelection -d=initialization,NLSanalyticJacobian,newInst",
+    __OpenModelica_commandLineOptions = "--matchingAlgorithm=PFPlusExt --indexReductionMethod=dynamicStateSelection -d=initialization,NLSanalyticJacobian,newInst +d=initialization ",
     __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"));
 end AircraftLinDyn_longi_00_v03;
