@@ -11,11 +11,11 @@ model simPIO_longi_01_v01
     Placement(visible = true, transformation(origin = {-130, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Sum sum1(nin = 3) annotation(
     Placement(visible = true, transformation(origin = {10, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Math.Gain proportional2(k = -2.0) annotation(
+  Modelica.Blocks.Math.Gain proportional2(k = -2) annotation(
     Placement(visible = true, transformation(origin = {-50, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.Integrator integrator2(k = -1.0) annotation(
+  Modelica.Blocks.Continuous.Integrator integrator2(k = -1) annotation(
     Placement(visible = true, transformation(origin = {-50, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.Derivative derivative2(T = 0.01, k = -0.5) annotation(
+  Modelica.Blocks.Continuous.Derivative derivative2(T = 0.01, k = -2) annotation(
     Placement(visible = true, transformation(origin = {-50, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Trapezoid trapez_elev(amplitude = -5, falling = 0.1, nperiod = 1, offset = 0, period = 30, rising = 0.1, startTime = 10, width = 12) annotation(
     Placement(visible = true, transformation(origin = {-70, 110}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -23,16 +23,12 @@ model simPIO_longi_01_v01
     Placement(visible = true, transformation(origin = {0, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain proportional3(k = -2.0) annotation(
     Placement(visible = true, transformation(origin = {-50, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.Integrator integrator3(k = -1.0) annotation(
+  Modelica.Blocks.Continuous.Integrator integrator3(k = 0.0) annotation(
     Placement(visible = true, transformation(origin = {-50, -190}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.Derivative derivative3(T = 0.01, k = -0.5) annotation(
+  Modelica.Blocks.Continuous.Derivative derivative3(T = 0.01, k = 0.0) annotation(
     Placement(visible = true, transformation(origin = {-50, -230}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback feedback1 annotation(
     Placement(visible = true, transformation(origin = {-130, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Math.Feedback feedback2 annotation(
-    Placement(visible = true, transformation(origin = {30, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Math.Feedback feedback3 annotation(
-    Placement(visible = true, transformation(origin = {60, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain gain_q3(k = 1) annotation(
     Placement(visible = true, transformation(origin = {58, -220}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain gain_dq3(k = 1) annotation(
@@ -166,12 +162,12 @@ model simPIO_longi_01_v01
   SystemModels.VirtualExperiments.simPIO_longi_01_v01.aircraft_longi aircraft2 annotation(
     Placement(visible = true, transformation(origin = {90, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   SystemModels.VirtualExperiments.simPIO_longi_01_v01.rateLimitter limElevRate3 annotation(
-    Placement(visible = true, transformation(origin = {100, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {120, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   SystemModels.VirtualExperiments.simPIO_longi_01_v01.aircraft_longi aircraft3 annotation(
-    Placement(visible = true, transformation(origin = {130, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Nonlinear.DeadZone dead_dq3(deadZoneAtInit = true, uMax = 10, uMin = -1.0 * dead_dq3.uMax)  annotation(
+    Placement(visible = true, transformation(origin = {150, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Nonlinear.DeadZone dead_dq3(deadZoneAtInit = true, uMax = 5, uMin = -1.0 * dead_dq3.uMax)  annotation(
     Placement(visible = true, transformation(origin = {110, -190}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
-  Modelica.Blocks.Nonlinear.DeadZone dead_q3(deadZoneAtInit = true, uMax = 10, uMin = -1.0 * dead_q3.uMax)  annotation(
+  Modelica.Blocks.Nonlinear.DeadZone dead_q3(deadZoneAtInit = true, uMax = 5, uMin = -1.0 * dead_q3.uMax)  annotation(
     Placement(visible = true, transformation(origin = {90, -220}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.FirstOrder aviatorDelay2(T = 0.25, k = 1)  annotation(
     Placement(visible = true, transformation(origin = {-100, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -181,6 +177,10 @@ model simPIO_longi_01_v01
     Placement(visible = true, transformation(origin = {140, -190}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.FirstOrder aviatorDelay3_2(T = 0.25, k = 1) annotation(
     Placement(visible = true, transformation(origin = {120, -220}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Add add annotation(
+    Placement(visible = true, transformation(origin = {40, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Add add1 annotation(
+    Placement(visible = true, transformation(origin = {80, -150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   connect(ramp_pitchIntend.y, feedback.u1) annotation(
     Line(points = {{-159, 30}, {-138, 30}}, color = {0, 0, 127}));
@@ -198,14 +198,6 @@ equation
     Line(points = {{-39, -190}, {-26, -190}, {-26, -150}, {-12, -150}}, color = {0, 0, 127}));
   connect(derivative3.y, sum11.u[3]) annotation(
     Line(points = {{-39, -230}, {-22, -230}, {-22, -150}, {-12, -150}}, color = {0, 0, 127}));
-  connect(sum11.y, feedback2.u1) annotation(
-    Line(points = {{11, -150}, {22, -150}}, color = {0, 0, 127}));
-  connect(feedback2.y, feedback3.u1) annotation(
-    Line(points = {{39, -150}, {52, -150}}, color = {0, 0, 127}));
-  connect(gain_dq3.y, feedback3.u2) annotation(
-    Line(points = {{69, -190}, {60, -190}, {60, -158}}, color = {0, 0, 127}));
-  connect(gain_q3.y, feedback2.u2) annotation(
-    Line(points = {{47, -220}, {30, -220}, {30, -158}}, color = {0, 0, 127}));
   connect(ramp_elev1.y, limElevRate.u) annotation(
     Line(points = {{-58, 170}, {-42, 170}, {-42, 170}, {-42, 170}}, color = {0, 0, 127}));
   connect(limElevRate.y, aircraft.u_elev) annotation(
@@ -220,12 +212,10 @@ equation
     Line(points = {{62, 30}, {78, 30}, {78, 30}, {78, 30}}, color = {0, 0, 127}));
   connect(aircraft2.y_theta, feedback.u2) annotation(
     Line(points = {{102, 36}, {114, 36}, {114, -70}, {-130, -70}, {-130, 22}}, color = {0, 0, 127}));
-  connect(feedback3.y, limElevRate3.u) annotation(
-    Line(points = {{69, -150}, {88, -150}}, color = {0, 0, 127}));
   connect(limElevRate3.y, aircraft3.u_elev) annotation(
-    Line(points = {{111, -150}, {119, -150}}, color = {0, 0, 127}));
+    Line(points = {{131, -150}, {139, -150}}, color = {0, 0, 127}));
   connect(aircraft3.y_theta, feedback1.u2) annotation(
-    Line(points = {{141, -144}, {178, -144}, {178, -254}, {-130, -254}, {-130, -158}}, color = {0, 0, 127}));
+    Line(points = {{161, -144}, {178, -144}, {178, -254}, {-130, -254}, {-130, -158}}, color = {0, 0, 127}));
   connect(gain_dq3.u, dead_dq3.y) annotation(
     Line(points = {{92, -190}, {98, -190}}, color = {0, 0, 127}));
   connect(gain_q3.u, dead_q3.y) annotation(
@@ -247,13 +237,23 @@ equation
   connect(aviatorDelay3.y, derivative3.u) annotation(
     Line(points = {{-88, -150}, {-74, -150}, {-74, -230}, {-62, -230}, {-62, -230}}, color = {0, 0, 127}));
   connect(aircraft3.y_dq, aviatorDelay3_1.u) annotation(
-    Line(points = {{142, -156}, {168, -156}, {168, -190}, {152, -190}}, color = {0, 0, 127}));
+    Line(points = {{161, -156}, {168, -156}, {168, -190}, {152, -190}}, color = {0, 0, 127}));
   connect(aviatorDelay3_1.y, dead_dq3.u) annotation(
     Line(points = {{129, -190}, {122, -190}}, color = {0, 0, 127}));
   connect(dead_q3.u, aviatorDelay3_2.y) annotation(
     Line(points = {{102, -220}, {110, -220}, {110, -220}, {110, -220}}, color = {0, 0, 127}));
   connect(aircraft3.y_q, aviatorDelay3_2.u) annotation(
-    Line(points = {{142, -150}, {172, -150}, {172, -220}, {132, -220}, {132, -220}}, color = {0, 0, 127}));
+    Line(points = {{161, -150}, {172, -150}, {172, -220}, {132, -220}}, color = {0, 0, 127}));
+  connect(sum11.y, add.u1) annotation(
+    Line(points = {{12, -150}, {16, -150}, {16, -144}, {28, -144}}, color = {0, 0, 127}));
+  connect(gain_q3.y, add.u2) annotation(
+    Line(points = {{48, -220}, {20, -220}, {20, -156}, {28, -156}, {28, -156}}, color = {0, 0, 127}));
+  connect(add.y, add1.u1) annotation(
+    Line(points = {{52, -150}, {58, -150}, {58, -144}, {68, -144}, {68, -144}}, color = {0, 0, 127}));
+  connect(gain_dq3.y, add1.u2) annotation(
+    Line(points = {{70, -190}, {60, -190}, {60, -156}, {68, -156}, {68, -156}}, color = {0, 0, 127}));
+  connect(add1.y, limElevRate3.u) annotation(
+    Line(points = {{92, -150}, {106, -150}, {106, -150}, {108, -150}}, color = {0, 0, 127}));
 protected
   annotation(
     Diagram(coordinateSystem(extent = {{-180, -300}, {180, 200}})),
