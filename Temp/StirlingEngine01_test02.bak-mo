@@ -1,0 +1,65 @@
+within SystemModels.Temp;
+
+model StirlingEngine01_test02
+  extends Modelica.Icons.Example;
+  //-----
+  package engineAir = Modelica.Media.Air.DryAirNasa;
+  //package engineAir = PropulsionSystem.Media.EngineBreathingAir.DryAirMethaneMixture00;
+  //redeclare package Medium = engineAir
+  //-----
+  inner Modelica.Fluid.System system(energyDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial, massDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial, momentumDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial)  annotation(
+    Placement(visible = true, transformation(origin = {-90, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Fluid.Machines.SweptVolume sweptVolume1(redeclare package Medium = engineAir, nPorts = 1, pistonCrossArea = Modelica.Constants.pi / 4 * 0.1 ^ 2, use_HeatTransfer = true, use_portsData = false)  annotation(
+    Placement(visible = true, transformation(origin = {-30, 10}, extent = {{-10, 10}, {10, -10}}, rotation = 0)));
+  Modelica.Fluid.Machines.SweptVolume sweptVolume2(redeclare package Medium = engineAir, nPorts = 1, pistonCrossArea = Modelica.Constants.pi / 4 * 0.1 ^ 2, use_HeatTransfer = true, use_portsData = false) annotation(
+    Placement(visible = true, transformation(origin = {30, 10}, extent = {{10, 10}, {-10, -10}}, rotation = 0)));
+  Modelica.Fluid.Vessels.ClosedVolume volume(redeclare package Medium = engineAir, V = 0.1 * Modelica.Constants.pi / 4 * 0.1 ^ 2, nPorts = 2, use_portsData = false) annotation(
+    Placement(visible = true, transformation(origin = {-10, 40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Thermal.HeatTransfer.Sources.FixedTemperature fixedTemperature1(T(displayUnit = "K") = 800)  annotation(
+    Placement(visible = true, transformation(origin = {-90, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Thermal.HeatTransfer.Sources.FixedTemperature fixedTemperature2(T(displayUnit = "K") = 288.15) annotation(
+    Placement(visible = true, transformation(origin = {90, 10}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
+  Modelica.Thermal.HeatTransfer.Components.ThermalConductor thermalConductor1(G = 200)  annotation(
+    Placement(visible = true, transformation(origin = {-60, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Thermal.HeatTransfer.Components.ThermalConductor thermalConductor2(G = 200)  annotation(
+    Placement(visible = true, transformation(origin = {60, 10}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Joints.Prismatic prismatic1 annotation(
+    Placement(visible = true, transformation(origin = {-30, -30}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+  Modelica.Mechanics.MultiBody.Joints.Prismatic prismatic2 annotation(
+    Placement(visible = true, transformation(origin = {30, -30}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+  inner Modelica.Mechanics.MultiBody.World world annotation(
+    Placement(visible = true, transformation(origin = {-90, -90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Joints.Revolute revolute1(n = {1, 0, 0})  annotation(
+    Placement(visible = true, transformation(origin = {-50, -90}, extent = {{-10, 10}, {10, -10}}, rotation = 0)));
+  Modelica.Mechanics.Rotational.Components.Inertia inertia1(J = 10)  annotation(
+    Placement(visible = true, transformation(origin = {-70, -110}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.FixedTranslation fixedTranslation1 annotation(
+    Placement(visible = true, transformation(origin = {-70, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+equation
+  connect(fixedTranslation1.frame_b, prismatic2.frame_a) annotation(
+    Line(points = {{-70, -40}, {-70, -40}, {-70, -20}, {30, -20}, {30, -20}}, color = {95, 95, 95}));
+  connect(fixedTranslation1.frame_b, prismatic1.frame_a) annotation(
+    Line(points = {{-70, -40}, {-70, -40}, {-70, -20}, {-30, -20}, {-30, -20}}, color = {95, 95, 95}));
+  connect(world.frame_b, fixedTranslation1.frame_a) annotation(
+    Line(points = {{-80, -90}, {-70, -90}, {-70, -60}, {-70, -60}}, color = {95, 95, 95}));
+  connect(sweptVolume2.flange, prismatic2.axis) annotation(
+    Line(points = {{30, 0}, {30, 0}, {30, -12}, {50, -12}, {50, -38}, {36, -38}, {36, -38}}, color = {0, 127, 0}));
+  connect(sweptVolume2.heatPort, thermalConductor2.port_b) annotation(
+    Line(points = {{40, 10}, {50, 10}, {50, 10}, {50, 10}}, color = {191, 0, 0}));
+  connect(volume.ports[2], sweptVolume2.ports[1]) annotation(
+    Line(points = {{-10, 30}, {30, 30}, {30, 20}}, color = {0, 127, 255}, thickness = 0.5));
+  connect(thermalConductor2.port_a, fixedTemperature2.port) annotation(
+    Line(points = {{70, 10}, {80, 10}, {80, 10}, {80, 10}}, color = {191, 0, 0}));
+  connect(inertia1.flange_b, revolute1.axis) annotation(
+    Line(points = {{-60, -110}, {-50, -110}, {-50, -100}, {-50, -100}}));
+  connect(world.frame_b, revolute1.frame_a) annotation(
+    Line(points = {{-80, -90}, {-60, -90}, {-60, -90}, {-60, -90}}, color = {95, 95, 95}));
+  connect(sweptVolume1.flange, prismatic1.axis) annotation(
+    Line(points = {{-30, 0}, {-30, 0}, {-30, -12}, {-12, -12}, {-12, -38}, {-24, -38}, {-24, -38}}, color = {0, 127, 0}));
+  connect(thermalConductor1.port_b, sweptVolume1.heatPort) annotation(
+    Line(points = {{-50, 10}, {-40, 10}, {-40, 10}, {-40, 10}}, color = {191, 0, 0}));
+  connect(fixedTemperature1.port, thermalConductor1.port_a) annotation(
+    Line(points = {{-80, 10}, {-70, 10}, {-70, 10}, {-70, 10}}, color = {191, 0, 0}));
+  connect(sweptVolume1.ports[1], volume.ports[1]) annotation(
+    Line(points = {{-30, 20}, {-30, 20}, {-30, 30}, {-10, 30}, {-10, 30}}, color = {0, 127, 255}, thickness = 0.5));
+end StirlingEngine01_test02;

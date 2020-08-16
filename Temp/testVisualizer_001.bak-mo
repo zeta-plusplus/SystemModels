@@ -5,6 +5,11 @@ model testVisualizer_001
     Placement(transformation(extent = {{40, -170}, {20, -150}})));
   Modelica.Mechanics.MultiBody.Parts.BodyShape b0(r = {0, 0.351, 0}, shapeType = "modelica://SystemModels/stlData/TIE_fighter_001.stl", r_shape = {0, 0, 0}, lengthDirection = {1, 0, 0}, widthDirection = {0, 1, 0}, length = 0.225, width = 0.3, height = 0.3, color = {0, 0, 255}, r_CM = {0, 0, 0}, m = 1);
   //    shapeType="modelica://Modelica/Resources/Data/Shapes/RobotR3/b0.dxf",
+
+  model tempMdl_001
+  equation
+
+  end tempMdl_001;
 equation
   connect(world.frame_b, b0.frame_a);
   annotation(
