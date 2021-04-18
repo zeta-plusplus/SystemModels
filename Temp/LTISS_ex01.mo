@@ -2,7 +2,14 @@ within SystemModels.Temp;
 
 model LTISS_ex01
   extends Modelica.Icons.Example;
-  Modelica.Blocks.Continuous.StateSpace stateSpace1(A = [-0.023564, 41.0074, 0, -32.2; -0.000241, -1.296, 0.9846, 0; 0.00020571, -3.5094, -2.4142, 0; 0, 0, 1, 0], B = [0, 0; -0.0821, 0; -15.7002, 0; 0.0, 0], C = [1, 0, 0, 0; 0, 1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1], initType = Modelica.Blocks.Types.Init.InitialState) annotation(
+  /* **********
+  A=[-0.023564, 41.0074, 0, -32.2;   -0.000241, -1.296, 0.9846, 0;  0.00020571, -3.5094, -2.4142, 0;   0, 0, 1, 0]
+  B=[0.0, 0.0;   -0.0821, 0.0;   -15.7002, 0.0;   0.0, 0.0]
+  -----
+  A=[-0.0453, 0.0363, 0, -0.1830;   -0.3717, -2.0354, 0.9723, -0.0323;   0.3398, -7.0301, -2.9767, 0.0295;   0, 0, 1, 0]
+  B=[0, 0;   -0.1609, 0;   -11.8674, 0;   0, 0]
+  ********** */
+  Modelica.Blocks.Continuous.StateSpace stateSpace1(A=[-0.0453, 0.0363, 0, -0.1830;   -0.3717, -2.0354, 0.9723, -0.0323;   0.3398, -7.0301, -2.9767, 0.0295;   0, 0, 1, 0], B=[0, 0;   -0.1609, 0;   -11.8674, 0;   0, 0], C = [1, 0, 0, 0; 0, 1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1], initType = Modelica.Blocks.Types.Init.InitialState) annotation(
     Placement(visible = true, transformation(origin = {10, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.UnitConversions.From_deg from_deg1 annotation(
     Placement(visible = true, transformation(origin = {-30, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -12,7 +19,7 @@ model LTISS_ex01
     Placement(visible = true, transformation(origin = {10, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.UnitConversions.From_deg from_deg3 annotation(
     Placement(visible = true, transformation(origin = {-30, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.RealExpression realExpression1(y = if 2 <= time and time <= 4 then -3 elseif 30 <= time and time <= 32 then 3 else 0)  annotation(
+  Modelica.Blocks.Sources.RealExpression realExpression1(y = if 2 <= time and time <= 4 then -3 elseif 30 <= time and time <= 32 then -3 else -3)  annotation(
     Placement(visible = true, transformation(origin = {-70, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.RealExpression realExpression2(y = if 2 <= time and time <= 4 then 0 elseif 30 <= time and time <= 32 then 0 else 0) annotation(
     Placement(visible = true, transformation(origin = {-70, 40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
