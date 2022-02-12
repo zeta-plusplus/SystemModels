@@ -1,0 +1,7 @@
+within SystemModels.VirtualExperiments;
+
+model ParasolEffect
+  extends Modelica.Icons.Example;
+equation
+
+end ParasolEffect;
