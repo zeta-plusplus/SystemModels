@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+  <mrow>
+   <mi>Q</mi>
+   <mo stretchy="false">=</mo>
+   <mrow>
+    <mrow>
+     <mo fence="true" form="prefix" stretchy="false">{</mo>
+     <mrow>
+      <mrow>
+       <mi>h</mi>
+       <mo stretchy="false">∗</mo>
+       <mi>A</mi>
+      </mrow>
+     </mrow>
+     <mo fence="true" form="postfix" stretchy="false">}</mo>
+    </mrow>
+    <mo stretchy="false">∗</mo>
+    <mrow>
+     <mo fence="true" form="prefix" stretchy="false">(</mo>
+     <mrow>
+      <mrow>
+       <msub>
+        <mi>T</mi>
+        <mi>H</mi>
+       </msub>
+       <mo stretchy="false">−</mo>
+       <msub>
+        <mi>T</mi>
+        <mi>C</mi>
+       </msub>
+      </mrow>
+     </mrow>
+     <mo fence="true" form="postfix" stretchy="false">)</mo>
+    </mrow>
+   </mrow>
+  </mrow>
+  <annotation encoding="StarMath 5.0">{ Q} = lbrace h*A rbrace * ( T_H - T_C ) </annotation>
+ </semantics>
+</math>

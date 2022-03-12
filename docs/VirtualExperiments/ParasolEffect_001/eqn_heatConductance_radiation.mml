@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+  <mrow>
+   <mi>Q</mi>
+   <mo stretchy="false">=</mo>
+   <mrow>
+    <mrow>
+     <mo fence="true" form="prefix" stretchy="false">{</mo>
+     <mrow>
+      <mrow>
+       <mi>σ</mi>
+       <mi>ε</mi>
+       <msub>
+        <mi>A</mi>
+        <mn>1</mn>
+       </msub>
+       <msub>
+        <mi>F</mi>
+        <mrow>
+         <mn>1</mn>
+         <mi>→</mi>
+         <mn>2</mn>
+        </mrow>
+       </msub>
+       <mrow>
+        <mrow>
+         <mo fence="true" form="prefix" stretchy="false">(</mo>
+         <mrow>
+          <mrow>
+           <msubsup>
+            <mi>T</mi>
+            <mi>H</mi>
+            <mn>2</mn>
+           </msubsup>
+           <mo stretchy="false">+</mo>
+           <msubsup>
+            <mi>T</mi>
+            <mi>C</mi>
+            <mn>2</mn>
+           </msubsup>
+          </mrow>
+         </mrow>
+         <mo fence="true" form="postfix" stretchy="false">)</mo>
+        </mrow>
+        <mo stretchy="false">∗</mo>
+        <mrow>
+         <mo fence="true" form="prefix" stretchy="false">(</mo>
+         <mrow>
+          <mrow>
+           <msub>
+            <mi>T</mi>
+            <mi>H</mi>
+           </msub>
+           <mo stretchy="false">+</mo>
+           <msub>
+            <mi>T</mi>
+            <mi>C</mi>
+           </msub>
+          </mrow>
+         </mrow>
+         <mo fence="true" form="postfix" stretchy="false">)</mo>
+        </mrow>
+       </mrow>
+      </mrow>
+     </mrow>
+     <mo fence="true" form="postfix" stretchy="false">}</mo>
+    </mrow>
+    <mo stretchy="false">∗</mo>
+    <mrow>
+     <mo fence="true" form="prefix" stretchy="false">(</mo>
+     <mrow>
+      <mrow>
+       <msub>
+        <mi>T</mi>
+        <mi>H</mi>
+       </msub>
+       <mo stretchy="false">−</mo>
+       <msub>
+        <mi>T</mi>
+        <mi>C</mi>
+       </msub>
+      </mrow>
+     </mrow>
+     <mo fence="true" form="postfix" stretchy="false">)</mo>
+    </mrow>
+   </mrow>
+  </mrow>
+  <annotation encoding="StarMath 5.0">{ Q} = lbrace σ ε A_{1} F_{1→2}  (T_{H} ^{2} + T_{C} ^{2})*(T_H + T_C) rbrace * ( T_H - T_C ) </annotation>
+ </semantics>
+</math>

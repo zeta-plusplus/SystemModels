@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+  <mtable>
+   <mtr>
+    <mtd>
+     <mrow>
+      <msub>
+       <mi>r</mi>
+       <mi>i</mi>
+      </msub>
+      <mi mathvariant="normal">:</mi>
+      <mi mathvariant="italic">radius</mi>
+      <mi>,</mi>
+      <mi mathvariant="italic">disk</mi>
+      <mi>i</mi>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <msub>
+       <mi>r</mi>
+       <mi>j</mi>
+      </msub>
+      <mi mathvariant="normal">:</mi>
+      <mi mathvariant="italic">radius</mi>
+      <mi>,</mi>
+      <mi mathvariant="italic">disk</mi>
+      <mi>j</mi>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mi>L</mi>
+      <mi mathvariant="normal">:</mi>
+      <mi mathvariant="italic">distance</mi>
+      <mi mathvariant="italic">between</mi>
+      <mi mathvariant="italic">disks</mi>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow/>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <msub>
+       <mi>R</mi>
+       <mi>i</mi>
+      </msub>
+      <mo stretchy="false">=</mo>
+      <mrow>
+       <msub>
+        <mi>r</mi>
+        <mi>i</mi>
+       </msub>
+       <mo stretchy="false">/</mo>
+       <mi>L</mi>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <msub>
+       <mi>R</mi>
+       <mi>j</mi>
+      </msub>
+      <mo stretchy="false">=</mo>
+      <mrow>
+       <msub>
+        <mi>r</mi>
+        <mi>j</mi>
+       </msub>
+       <mo stretchy="false">/</mo>
+       <mi>L</mi>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mi>S</mi>
+      <mo stretchy="false">=</mo>
+      <mrow>
+       <mn>1</mn>
+       <mo stretchy="false">+</mo>
+       <mfrac>
+        <mrow>
+         <mn>1</mn>
+         <mo stretchy="false">+</mo>
+         <msubsup>
+          <mi>R</mi>
+          <mi>j</mi>
+          <mn>2</mn>
+         </msubsup>
+        </mrow>
+        <msubsup>
+         <mi>R</mi>
+         <mi>i</mi>
+         <mn>2</mn>
+        </msubsup>
+       </mfrac>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mrow>
+       <msub>
+        <mi>F</mi>
+        <mrow>
+         <mi>i</mi>
+         <mi>→</mi>
+         <mi>j</mi>
+        </mrow>
+       </msub>
+       <mo stretchy="false">=</mo>
+       <mfrac>
+        <mn>1</mn>
+        <mn>2</mn>
+       </mfrac>
+      </mrow>
+      <mrow>
+       <mo fence="true" form="prefix" stretchy="false">{</mo>
+       <mrow>
+        <mrow>
+         <mi>S</mi>
+         <mo stretchy="false">−</mo>
+         <msup>
+          <mrow>
+           <mo fence="true" form="prefix" stretchy="false">[</mo>
+           <mrow>
+            <mrow>
+             <mrow>
+              <msup>
+               <mi>S</mi>
+               <mn>2</mn>
+              </msup>
+              <mo stretchy="false">−</mo>
+              <mn>4</mn>
+             </mrow>
+             <msup>
+              <mrow>
+               <mo fence="true" form="prefix" stretchy="false">(</mo>
+               <mrow>
+                <mfrac>
+                 <msub>
+                  <mi>r</mi>
+                  <mi>j</mi>
+                 </msub>
+                 <msub>
+                  <mi>r</mi>
+                  <mi>i</mi>
+                 </msub>
+                </mfrac>
+               </mrow>
+               <mo fence="true" form="postfix" stretchy="false">)</mo>
+              </mrow>
+              <mn>2</mn>
+             </msup>
+            </mrow>
+           </mrow>
+           <mo fence="true" form="postfix" stretchy="false">]</mo>
+          </mrow>
+          <mrow>
+           <mn>1</mn>
+           <mo stretchy="false">/</mo>
+           <mn>2</mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mrow>
+       <mo fence="true" form="postfix" stretchy="false">}</mo>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+  </mtable>
+  <annotation encoding="StarMath 5.0">r_i: radius, disk i newline
+r_j: radius, disk j newline
+L: distance between disks newline
+newline 
+R_i = r_i / L newline
+R_j = r_j / L newline
+S = 1 + frac {1+ R_{j} ^{2} } { R_{i} ^{2} } newline
+F_{i→j} = frac {1} {2} lbrace S- [ S^{2}-4 ( frac {r_j} {r_i} ) ^{2}  ] ^{ 1 / 2 }  rbrace </annotation>
+ </semantics>
+</math>
