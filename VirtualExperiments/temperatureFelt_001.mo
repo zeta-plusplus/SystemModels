@@ -35,9 +35,9 @@ model temperatureFelt_001
   Modelica.Fluid.Sources.Boundary_pT boundary3(redeclare package Medium = moisitair1, T = 5 + 273.15, X = {0.05, 0.95}, nPorts = 2, p = 101.3 * 1000) annotation(
     Placement(visible = true, transformation(origin = {110, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
   FluidSystemComponents.Sensor.SpecificHeatCapacity specificHeatCapacity(redeclare package Medium = dryair1) annotation(
-    Placement(visible = true, transformation(origin = {-10, 40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-10, 42}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   FluidSystemComponents.Sensor.SpecificHeatCapacity specificHeatCapacity1(redeclare package Medium = moisitair1) annotation(
-    Placement(visible = true, transformation(origin = {-10, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-10, 2}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant const_waterVapor(k = 0.05)  annotation(
     Placement(visible = true, transformation(origin = {-90, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant const_dryAir(k = 0.95) annotation(
@@ -54,15 +54,15 @@ equation
   connect(const_waterVapor.y, boundary2.X_in[1]) annotation(
     Line(points = {{-78, -10}, {-68, -10}, {-68, -14}, {-52, -14}, {-52, -14}}, color = {0, 0, 127}));
   connect(boundary2.ports[1], specificHeatCapacity1.port) annotation(
-    Line(points = {{-30, -10}, {-10, -10}}, color = {0, 127, 255}));
+    Line(points = {{-30, -10}, {-20, -10}, {-20, -8}, {-10, -8}}, color = {0, 127, 255}));
   connect(boundary.ports[1], specificHeatCapacity.port) annotation(
-    Line(points = {{-30, 30}, {-10, 30}}, color = {0, 127, 255}));
+    Line(points = {{-30, 30}, {-20, 30}, {-20, 32}, {-10, 32}}, color = {0, 127, 255}));
   connect(ramp1.y, convection2.Gc) annotation(
     Line(points = {{1, -70}, {51, -70}, {51, -50}, {59, -50}}, color = {0, 0, 127}));
   connect(specificHeatCapacity1.port, volume1.ports[1]) annotation(
-    Line(points = {{-10, -10}, {58, -10}, {58, -10}, {60, -10}}, color = {0, 127, 255}));
+    Line(points = {{-10, -8}, {25, -8}, {25, -10}, {60, -10}}, color = {0, 127, 255}));
   connect(specificHeatCapacity.port, volume.ports[1]) annotation(
-    Line(points = {{-10, 30}, {18, 30}, {18, 30}, {20, 30}}, color = {0, 127, 255}));
+    Line(points = {{-10, 32}, {5, 32}, {5, 30}, {20, 30}}, color = {0, 127, 255}));
   connect(volume.ports[2], boundary1.ports[1]) annotation(
     Line(points = {{20, 30}, {100, 30}}, color = {0, 127, 255}, thickness = 0.5));
   connect(fixedTemperature1.port, thermalConductor1.port_a) annotation(
