@@ -3,7 +3,7 @@ within SystemModels.VirtualExperiments;
 model Ballistics_001
   extends Modelica.Icons.Example;
   //----------
-  import units = Modelica.SIunits;
+  import units = Modelica.Units.SI;
   //----------
   parameter units.Acceleration g = 9.81;
   parameter units.Velocity Vinit = 5430;

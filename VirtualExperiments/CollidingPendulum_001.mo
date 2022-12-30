@@ -3,7 +3,7 @@ within SystemModels.VirtualExperiments;
 model CollidingPendulum_001
   extends Modelica.Icons.Example;
   //----------
-  import units= Modelica.SIunits;
+  import units= Modelica.Units.SI;
   //-----
   units.Energy KE1;
   units.Energy KE2;
