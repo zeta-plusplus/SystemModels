@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+  <mtable>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mrow>
+       <msub>
+        <mi>V</mi>
+        <mrow>
+         <mi>x</mi>
+         <mn>0</mn>
+        </mrow>
+       </msub>
+       <mo stretchy="false">=</mo>
+       <mrow>
+        <msub>
+         <mi>V</mi>
+         <mi mathvariant="italic">init</mi>
+        </msub>
+        <mo stretchy="false">∗</mo>
+        <mi>cos</mi>
+       </mrow>
+      </mrow>
+      <mrow>
+       <mo fence="true" form="prefix" stretchy="false">(</mo>
+       <mrow>
+        <msub>
+         <mi>α</mi>
+         <mn>0</mn>
+        </msub>
+       </mrow>
+       <mo fence="true" form="postfix" stretchy="false">)</mo>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mrow>
+       <msub>
+        <mi>V</mi>
+        <mrow>
+         <mi>y</mi>
+         <mn>0</mn>
+        </mrow>
+       </msub>
+       <mo stretchy="false">=</mo>
+       <mrow>
+        <msub>
+         <mi>V</mi>
+         <mi mathvariant="italic">init</mi>
+        </msub>
+        <mo stretchy="false">∗</mo>
+        <mi>sin</mi>
+       </mrow>
+      </mrow>
+      <mrow>
+       <mo fence="true" form="prefix" stretchy="false">(</mo>
+       <mrow>
+        <msub>
+         <mi>α</mi>
+         <mn>0</mn>
+        </msub>
+       </mrow>
+       <mo fence="true" form="postfix" stretchy="false">)</mo>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+  </mtable>
+  <annotation encoding="StarMath 5.0">V_x0 = V_init * cos(α_0)  newline
+V_y0 = V_init * sin(α_0)  newline
+</annotation>
+ </semantics>
+</math>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+  <mtable>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mrow>
+       <mi mathvariant="italic">range</mi>
+       <mo stretchy="false">=</mo>
+       <mrow>
+        <mn>3000</mn>
+        <mo stretchy="false">∗</mo>
+        <msup>
+         <mn>10</mn>
+         <mn>3</mn>
+        </msup>
+       </mrow>
+      </mrow>
+      <mrow>
+       <mo fence="true" form="prefix" stretchy="false">[</mo>
+       <mrow>
+        <mi>m</mi>
+       </mrow>
+       <mo fence="true" form="postfix" stretchy="false">]</mo>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mrow>
+       <msub>
+        <mi>α</mi>
+        <mn>0</mn>
+       </msub>
+       <mo stretchy="false">=</mo>
+       <mfrac>
+        <mi>π</mi>
+        <mn>4</mn>
+       </mfrac>
+      </mrow>
+      <mrow>
+       <mo fence="true" form="prefix" stretchy="false">[</mo>
+       <mrow>
+        <mi mathvariant="italic">rad</mi>
+       </mrow>
+       <mo fence="true" form="postfix" stretchy="false">]</mo>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+  </mtable>
+  <annotation encoding="StarMath 5.0">range= 3000 * 10^{3} [m]  newline
+α_{0}= {π} over {4} [rad] newline  </annotation>
+ </semantics>
+</math>

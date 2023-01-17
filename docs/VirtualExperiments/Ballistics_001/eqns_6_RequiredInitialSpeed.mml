@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+  <mrow>
+   <mrow>
+    <msub>
+     <mi>V</mi>
+     <mn>0</mn>
+    </msub>
+    <mo stretchy="false">=</mo>
+    <mn>5425</mn>
+   </mrow>
+   <mrow>
+    <mo fence="true" form="prefix" stretchy="false">[</mo>
+    <mrow>
+     <mrow>
+      <mi>m</mi>
+      <mo stretchy="false">/</mo>
+      <mi>s</mi>
+     </mrow>
+    </mrow>
+    <mo fence="true" form="postfix" stretchy="false">]</mo>
+   </mrow>
+  </mrow>
+  <annotation encoding="StarMath 5.0">V_{0}= 5425 [m/s]   </annotation>
+ </semantics>
+</math>

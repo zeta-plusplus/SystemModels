@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+  <mtable>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mi>y</mi>
+      <mrow>
+       <mrow>
+        <mo fence="true" form="prefix" stretchy="false">(</mo>
+        <mrow>
+         <msub>
+          <mi>t</mi>
+          <mi mathvariant="italic">imp</mi>
+         </msub>
+        </mrow>
+        <mo fence="true" form="postfix" stretchy="false">)</mo>
+       </mrow>
+       <mo stretchy="false">=</mo>
+       <mn>0.0</mn>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mrow>
+       <msub>
+        <mi>t</mi>
+        <mi mathvariant="italic">imp</mi>
+       </msub>
+       <mo stretchy="false">∗</mo>
+       <mrow>
+        <mo fence="true" form="prefix" stretchy="false">(</mo>
+        <mrow>
+         <mrow>
+          <mrow>
+           <msub>
+            <mi>V</mi>
+            <mn>0</mn>
+           </msub>
+           <mo stretchy="false">∗</mo>
+           <mi>sin</mi>
+          </mrow>
+          <mrow>
+           <mrow>
+            <mo fence="true" form="prefix" stretchy="false">(</mo>
+            <mrow>
+             <msub>
+              <mi>α</mi>
+              <mn>0</mn>
+             </msub>
+            </mrow>
+            <mo fence="true" form="postfix" stretchy="false">)</mo>
+           </mrow>
+           <mo stretchy="false">−</mo>
+           <mrow>
+            <mfrac>
+             <mn>1</mn>
+             <mn>2</mn>
+            </mfrac>
+            <mo stretchy="false">∗</mo>
+            <mi>g</mi>
+            <mo stretchy="false">∗</mo>
+            <msub>
+             <mi>t</mi>
+             <mi mathvariant="italic">imp</mi>
+            </msub>
+           </mrow>
+          </mrow>
+         </mrow>
+        </mrow>
+        <mo fence="true" form="postfix" stretchy="false">)</mo>
+       </mrow>
+      </mrow>
+      <mo stretchy="false">=</mo>
+      <mn>0.0</mn>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mrow>
+       <msub>
+        <mi>t</mi>
+        <mi mathvariant="italic">imp</mi>
+       </msub>
+       <mo stretchy="false">=</mo>
+       <mrow>
+        <mfrac>
+         <mn>1</mn>
+         <mi>g</mi>
+        </mfrac>
+        <mo stretchy="false">∗</mo>
+        <mn>2</mn>
+        <mo stretchy="false">∗</mo>
+        <msub>
+         <mi>V</mi>
+         <mn>0</mn>
+        </msub>
+        <mo stretchy="false">∗</mo>
+        <mi>sin</mi>
+       </mrow>
+      </mrow>
+      <mrow>
+       <mo fence="true" form="prefix" stretchy="false">(</mo>
+       <mrow>
+        <msub>
+         <mi>α</mi>
+         <mn>0</mn>
+        </msub>
+       </mrow>
+       <mo fence="true" form="postfix" stretchy="false">)</mo>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+  </mtable>
+  <annotation encoding="StarMath 5.0">y( t_{imp} )=0.0  newline
+t_{imp}* (V_0* sin(α_0)- {1} over {2}*g*t_{imp} ) = 0.0  newline
+t_{imp}= {1} over {g} * 2 * V_0 * sin(α_0)  newline
+</annotation>
+ </semantics>
+</math>

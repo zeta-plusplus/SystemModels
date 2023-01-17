@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+  <mtable>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mfrac>
+       <mi mathvariant="italic">dx</mi>
+       <mi mathvariant="italic">dt</mi>
+      </mfrac>
+      <mo stretchy="false">=</mo>
+      <msub>
+       <mi>V</mi>
+       <mi>x</mi>
+      </msub>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mfrac>
+       <mi mathvariant="italic">dy</mi>
+       <mi mathvariant="italic">dt</mi>
+      </mfrac>
+      <mo stretchy="false">=</mo>
+      <msub>
+       <mi>V</mi>
+       <mi>y</mi>
+      </msub>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mfrac>
+       <msub>
+        <mi mathvariant="italic">dV</mi>
+        <mi>x</mi>
+       </msub>
+       <mi mathvariant="italic">dt</mi>
+      </mfrac>
+      <mo stretchy="false">=</mo>
+      <msub>
+       <mi>a</mi>
+       <mi>x</mi>
+      </msub>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mfrac>
+       <msub>
+        <mi mathvariant="italic">dV</mi>
+        <mi>y</mi>
+       </msub>
+       <mi mathvariant="italic">dt</mi>
+      </mfrac>
+      <mo stretchy="false">=</mo>
+      <msub>
+       <mi>a</mi>
+       <mi>y</mi>
+      </msub>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <msub>
+       <mi>a</mi>
+       <mi>x</mi>
+      </msub>
+      <mo stretchy="false">=</mo>
+      <mn>0.0</mn>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <msub>
+       <mi>a</mi>
+       <mi>y</mi>
+      </msub>
+      <mo stretchy="false">=</mo>
+      <mrow>
+       <mrow>
+        <mo stretchy="false">−</mo>
+        <mn>1.0</mn>
+       </mrow>
+       <mo stretchy="false">∗</mo>
+       <mi>g</mi>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+  </mtable>
+  <annotation encoding="StarMath 5.0">frac {dx} {dt}= V_{x} newline
+frac {dy} {dt}= V_{y} newline
+frac {dV_{x}} {dt}= a_{x}  newline
+frac {dV_{y}} {dt}= a_{y}  newline
+a_x = 0.0  newline
+a_y = -1.0 * g  newline
+
+
+</annotation>
+ </semantics>
+</math>
