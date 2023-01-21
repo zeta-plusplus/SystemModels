@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+  <mtable>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mrow>
+       <mi mathvariant="italic">range</mi>
+       <mo stretchy="false">=</mo>
+       <mi>x</mi>
+      </mrow>
+      <mrow>
+       <mo fence="true" form="prefix" stretchy="false">(</mo>
+       <mrow>
+        <msub>
+         <mi>t</mi>
+         <mi mathvariant="italic">imp</mi>
+        </msub>
+       </mrow>
+       <mo fence="true" form="postfix" stretchy="false">)</mo>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <mrow>
+       <mrow>
+        <msub>
+         <mi>V</mi>
+         <mn>0</mn>
+        </msub>
+        <mo stretchy="false">∗</mo>
+        <mi>cos</mi>
+       </mrow>
+       <mrow>
+        <mo fence="true" form="prefix" stretchy="false">(</mo>
+        <mrow>
+         <msub>
+          <mi>α</mi>
+          <mn>0</mn>
+         </msub>
+        </mrow>
+        <mo fence="true" form="postfix" stretchy="false">)</mo>
+       </mrow>
+      </mrow>
+      <mrow>
+       <mfrac>
+        <mn>1</mn>
+        <mi>g</mi>
+       </mfrac>
+       <mo stretchy="false">∗</mo>
+       <mn>2.0</mn>
+       <mo stretchy="false">∗</mo>
+       <msub>
+        <mi>V</mi>
+        <mn>0</mn>
+       </msub>
+       <mo stretchy="false">∗</mo>
+       <mi>sin</mi>
+      </mrow>
+      <mrow>
+       <mrow>
+        <mo fence="true" form="prefix" stretchy="false">(</mo>
+        <mrow>
+         <msub>
+          <mi>α</mi>
+          <mn>0</mn>
+         </msub>
+        </mrow>
+        <mo fence="true" form="postfix" stretchy="false">)</mo>
+       </mrow>
+       <mo stretchy="false">=</mo>
+       <mi mathvariant="italic">range</mi>
+      </mrow>
+     </mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mo stretchy="false">⋮</mo>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow>
+      <msub>
+       <mi>V</mi>
+       <mn>0</mn>
+      </msub>
+      <mo stretchy="false">=</mo>
+      <msqrt>
+       <mfrac>
+        <mrow>
+         <mi>g</mi>
+         <mo stretchy="false">∗</mo>
+         <mi mathvariant="italic">range</mi>
+        </mrow>
+        <mrow>
+         <mrow>
+          <mn>2.0</mn>
+          <mo stretchy="false">∗</mo>
+          <mi>sin</mi>
+         </mrow>
+         <mrow>
+          <mrow>
+           <mo fence="true" form="prefix" stretchy="false">(</mo>
+           <mrow>
+            <msub>
+             <mi>α</mi>
+             <mn>0</mn>
+            </msub>
+           </mrow>
+           <mo fence="true" form="postfix" stretchy="false">)</mo>
+          </mrow>
+          <mo stretchy="false">∗</mo>
+          <mi>cos</mi>
+         </mrow>
+         <mrow>
+          <mo fence="true" form="prefix" stretchy="false">(</mo>
+          <mrow>
+           <msub>
+            <mi>α</mi>
+            <mn>0</mn>
+           </msub>
+          </mrow>
+          <mo fence="true" form="postfix" stretchy="false">)</mo>
+         </mrow>
+        </mrow>
+       </mfrac>
+      </msqrt>
+     </mrow>
+    </mtd>
+   </mtr>
+  </mtable>
+  <annotation encoding="StarMath 5.0">range = x (t_{imp} )   newline
+nospace { V_0 * cos(α_0) }  {1} over {g} * 2.0 * V_0 * sin(α_0)=range   newline
+dotsvert newline
+V_0 = sqrt{ frac {g * range} {2.0* sin(α_0) * cos(α_0) } }  newline
+</annotation>
+ </semantics>
+</math>
