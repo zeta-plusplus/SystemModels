@@ -3,29 +3,33 @@ within SystemModels.Practice;
 model quarterCar
   extends Modelica.Icons.Example;
   //-----
-  Modelica.Mechanics.Translational.Components.Mass mass1(L = 0.2, a(fixed = false), m = 50, s(start = mass1.L / 2), v(fixed = false)) annotation(
-    Placement(visible = true, transformation(origin = {-30, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Mechanics.Translational.Components.SpringDamper springDamper1(c = 10000, d = 50, s_rel(start = 0.0), s_rel0 = 0, stateSelect = StateSelect.default, v_rel(fixed = false)) annotation(
-    Placement(visible = true, transformation(origin = {-30, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+  Modelica.Mechanics.Translational.Components.Mass massTire(L = 0.2, a(fixed = false), m = 50, s(start = massTire.L / 2), v(fixed = false)) annotation(
+    Placement(visible = true, transformation(origin = {50, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+  Modelica.Mechanics.Translational.Components.SpringDamper tire(c = 10000, d = 50, s_rel(start = 0.0), s_rel0 = 0, stateSelect = StateSelect.default, v_rel(fixed = false)) annotation(
+    Placement(visible = true, transformation(origin = {50, -20}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
   Modelica.Blocks.Sources.Step step1(height = 0.05, offset = 0, startTime = 10) annotation(
-    Placement(visible = true, transformation(origin = {-80, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Mechanics.Translational.Sources.Position position1(exact = true, useSupport = false, v(fixed = false)) annotation(
-    Placement(visible = true, transformation(origin = {-50, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Mechanics.Translational.Components.Mass mass2(L = 0.2, a(fixed = false), m = 1000, s(start = mass1.L + mass2.L / 2 + 0.05), v(fixed = false)) annotation(
-    Placement(visible = true, transformation(origin = {-30, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Mechanics.Translational.Components.SpringDamper springDamper2(c = 1000, d = 100, s_rel(start = 0.0), s_rel0 = 0.05, stateSelect = StateSelect.default, v_rel(fixed = false)) annotation(
-    Placement(visible = true, transformation(origin = {-30, 20}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+    Placement(visible = true, transformation(origin = {-30, -90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Mechanics.Translational.Sources.Position roadSurface(exact = true, useSupport = false, v(fixed = false)) annotation(
+    Placement(visible = true, transformation(origin = {30, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Mechanics.Translational.Components.Mass massCarBody(L = 0.2, a(fixed = false), m = 1000, s(start = massTire.L + massCarBody.L / 2 + 0.05), v(fixed = false)) annotation(
+    Placement(visible = true, transformation(origin = {50, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+  Modelica.Mechanics.Translational.Components.SpringDamper Suspension(c = 1000, d = 100, s_rel(start = 0.0), s_rel0 = 0.05, stateSelect = StateSelect.default, v_rel(fixed = false)) annotation(
+    Placement(visible = true, transformation(origin = {50, 40}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+  Modelica.Blocks.Sources.Ramp ramp(duration = 10, height = 0.5, offset = 0, startTime = 10)  annotation(
+    Placement(visible = true, transformation(origin = {-30, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Sources.Trapezoid trapezoid(amplitude = 0.05, falling = 0.1, nperiod = 1, period = 10, rising = 0.1, startTime = 10, width = 0.05)  annotation(
+    Placement(visible = true, transformation(origin = {-30, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
-  connect(springDamper2.flange_b, mass2.flange_a) annotation(
-    Line(points = {{-30, 30}, {-30, 30}, {-30, 40}, {-30, 40}}, color = {0, 127, 0}));
-  connect(mass1.flange_b, springDamper2.flange_a) annotation(
-    Line(points = {{-30, 0}, {-30, 0}, {-30, 10}, {-30, 10}}, color = {0, 127, 0}));
-  connect(springDamper1.flange_b, mass1.flange_a) annotation(
-    Line(points = {{-30, -30}, {-30, -30}, {-30, -30}, {-30, -30}, {-30, -20}, {-30, -20}, {-30, -20}, {-30, -20}}, color = {0, 127, 0}));
-  connect(position1.flange, springDamper1.flange_a) annotation(
-    Line(points = {{-40, -70}, {-30, -70}, {-30, -50}}, color = {0, 127, 0}));
-  connect(step1.y, position1.s_ref) annotation(
-    Line(points = {{-69, -72}, {-62, -72}}, color = {0, 0, 127}));
+  connect(Suspension.flange_b, massCarBody.flange_a) annotation(
+    Line(points = {{50, 50}, {50, 50}, {50, 60}, {50, 60}}, color = {0, 127, 0}));
+  connect(massTire.flange_b, Suspension.flange_a) annotation(
+    Line(points = {{50, 20}, {50, 20}, {50, 30}, {50, 30}}, color = {0, 127, 0}));
+  connect(tire.flange_b, massTire.flange_a) annotation(
+    Line(points = {{50, -10}, {50, -10}, {50, -10}, {50, -10}, {50, 0}, {50, 0}, {50, 0}, {50, 0}}, color = {0, 127, 0}));
+  connect(roadSurface.flange, tire.flange_a) annotation(
+    Line(points = {{40, -50}, {50, -50}, {50, -30}}, color = {0, 127, 0}));
+  connect(step1.y, roadSurface.s_ref) annotation(
+    Line(points = {{-18, -90}, {2, -90}, {2, -50}, {18, -50}}, color = {0, 0, 127}));
 equation
 
   annotation(
