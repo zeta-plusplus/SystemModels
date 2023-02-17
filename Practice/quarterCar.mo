@@ -3,17 +3,17 @@ within SystemModels.Practice;
 model quarterCar
   extends Modelica.Icons.Example;
   //-----
-  Modelica.Mechanics.Translational.Components.Mass massTire(L = 0.2, a(fixed = false), m = 50, s(start = massTire.L / 2), v(fixed = false)) annotation(
+  Modelica.Mechanics.Translational.Components.Mass massTire(L = 0.1, a(fixed = false), m = 36, s(start = massTire.L / 2), v(fixed = false)) annotation(
     Placement(visible = true, transformation(origin = {50, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Mechanics.Translational.Components.SpringDamper tire(c = 10000, d = 50, s_rel(start = 0.0), s_rel0 = 0, stateSelect = StateSelect.default, v_rel(fixed = false)) annotation(
+  Modelica.Mechanics.Translational.Components.SpringDamper tire(c = 1.6*10^5, d = 5, s_rel(start = 0.0), s_rel0 = 0, stateSelect = StateSelect.default, v_rel(fixed = false)) annotation(
     Placement(visible = true, transformation(origin = {50, -20}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
   Modelica.Blocks.Sources.Step step1(height = 0.05, offset = 0, startTime = 10) annotation(
     Placement(visible = true, transformation(origin = {-30, -90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Mechanics.Translational.Sources.Position roadSurface(exact = true, useSupport = false, v(fixed = false)) annotation(
     Placement(visible = true, transformation(origin = {30, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Mechanics.Translational.Components.Mass massCarBody(L = 0.2, a(fixed = false), m = 1000, s(start = massTire.L + massCarBody.L / 2 + 0.05), v(fixed = false)) annotation(
+  Modelica.Mechanics.Translational.Components.Mass massCarBody(L = 0.10, a(fixed = false), m = 240, s(start = massTire.L + massCarBody.L / 2 + 0.05), v(fixed = false)) annotation(
     Placement(visible = true, transformation(origin = {50, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Mechanics.Translational.Components.SpringDamper Suspension(c = 1000, d = 100, s_rel(start = 0.0), s_rel0 = 0.05, stateSelect = StateSelect.default, v_rel(fixed = false)) annotation(
+  Modelica.Mechanics.Translational.Components.SpringDamper Suspension(c = 1.6*10^4, d = 98, s_rel(start = 0.0), s_rel0 = 0.05, stateSelect = StateSelect.default, v_rel(fixed = false)) annotation(
     Placement(visible = true, transformation(origin = {50, 40}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
   Modelica.Blocks.Sources.Ramp ramp(duration = 10, height = 0.5, offset = 0, startTime = 10)  annotation(
     Placement(visible = true, transformation(origin = {-30, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
