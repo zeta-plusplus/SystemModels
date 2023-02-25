@@ -28,8 +28,8 @@ equation
     Line(points = {{50, -10}, {50, -10}, {50, -10}, {50, -10}, {50, 0}, {50, 0}, {50, 0}, {50, 0}}, color = {0, 127, 0}));
   connect(roadSurface.flange, tire.flange_a) annotation(
     Line(points = {{40, -50}, {50, -50}, {50, -30}}, color = {0, 127, 0}));
-  connect(road_trapezoid.y, roadSurface.s_ref) annotation(
-    Line(points = {{-18, 10}, {6, 10}, {6, -50}, {18, -50}}, color = {0, 0, 127}));
+  connect(road_ramp.y, roadSurface.s_ref) annotation(
+    Line(points = {{-18, -30}, {-8, -30}, {-8, -50}, {18, -50}}, color = {0, 0, 127}));
 equation
 
   annotation(
