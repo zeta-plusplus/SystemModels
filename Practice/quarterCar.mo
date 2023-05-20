@@ -3,7 +3,7 @@ within SystemModels.Practice;
 model quarterCar
   extends Modelica.Icons.Example;
   //-----
-  Modelica.Mechanics.Translational.Components.Mass massTire(L = 0.1, a(fixed = false), m = 36, s(start = massTire.L / 2), v(fixed = false)) annotation(
+  Modelica.Mechanics.Translational.Components.Mass massTire(L = 0.1, a(fixed = false), m = 36, s(start = massTire.L/2), v(fixed = false)) annotation(
     Placement(visible = true, transformation(origin = {50, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
   Modelica.Mechanics.Translational.Components.SpringDamper tire(c = 1.6*10^5, d = 5, s_rel(start = 0.0), s_rel0 = 0, stateSelect = StateSelect.default, v_rel(fixed = false)) annotation(
     Placement(visible = true, transformation(origin = {50, -20}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));

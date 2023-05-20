@@ -24,3 +24,7 @@ test_TurbineByCtrldPump_001
 test_CompressorByCtrldPump_001
 SolidHeatNetwork_ex01_v01
 quarterCar_temp
+temp
+FlowJunction
+BarGraph_v001
+BarGraph_test_001
